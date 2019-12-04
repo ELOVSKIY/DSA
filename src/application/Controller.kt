@@ -45,6 +45,19 @@ class Controller {
     @FXML
     lateinit var hashValue: TextField
 
+
+    @FXML
+    lateinit var wValue: TextField
+
+    @FXML
+    lateinit var u1Value: TextField
+
+    @FXML
+    lateinit var u2Value: TextField
+
+    @FXML
+    lateinit var vValue: TextField
+
     @FXML
     lateinit var filePathText: Text
 
@@ -95,8 +108,16 @@ class Controller {
                 val G = gValue.text.toString().toBigInteger()
                 val Y = yValue.text.toString().toBigInteger()
                 val dsa = DSA(P, Q, fileBytes)
-                val answer = dsa.checkSign(R, S, G, Y)
                 hashValue.text = dsa.hash.toString()
+                val answer = dsa.checkSign(R, S, G, Y)
+
+                wValue.text = dsa.W.toString()
+                u1Value.text = dsa.U1.toString()
+                u2Value.text = dsa.U2.toString()
+                vValue.text = dsa.V.toString()
+
+
+
                 if (answer){
                     alert("Valid signature.")
                 }else{

@@ -44,11 +44,11 @@ class DSA(
     }
 
     fun checkSign(R: BigInteger, S: BigInteger, G: BigInteger, Y: BigInteger): Boolean {
-        val W = S.modPow(Q - TWO, Q)
-        val u1 = (W * hash).mod(Q)
-        val u2 = (R * W).mod(Q)
-        val v = (G.modPow(u1, P) * Y.modPow(u2, P)).mod(P).mod(Q)
-        return v == R
+        W = S.modPow(Q - TWO, Q)
+        U1 = (W * hash).mod(Q)
+        U2 = (R * W).mod(Q)
+        V = (G.modPow(U1, P) * Y.modPow(U2, P)).mod(P).mod(Q)
+        return V == R
     }
 
     private fun checkX(){

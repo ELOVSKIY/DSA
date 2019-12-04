@@ -5,32 +5,43 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="389" maxWidth="723" minHeight="389" minWidth="723" prefHeight="389.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<Pane maxHeight="420" maxWidth="730.0" minHeight="420" minWidth="730" prefHeight="420.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <TextField fx:id="pValue" layoutX="37.0" layoutY="35.0" prefWidth="300.0" text="P" />
-      <TextField fx:id="qValue" layoutX="37.0" layoutY="71.0" prefWidth="300.0" text="Q" />
-      <TextField fx:id="hValue" layoutX="37.0" layoutY="103.0" prefWidth="300.0" text="h" />
-      <TextField layoutX="37.0" layoutY="136.0" prefWidth="300.0" text="X" fx:id="xValue" />
-      <TextField fx:id="kValue" layoutX="37.0" layoutY="168.0" prefWidth="300.0" text="K" />
-      <TextField fx:id="rValue" layoutX="400.0" layoutY="35.0" prefWidth="300.0" text="R" />
-      <TextField fx:id="sValue" layoutX="400.0" layoutY="71.0" prefWidth="300.0" text="S" />
-      <TextField fx:id="gValue" layoutX="400.0" layoutY="103.0" prefWidth="300.0" text="G" />
-      <TextField fx:id="yValue" layoutX="400.0" layoutY="136.0" prefWidth="300.0" text="Y" />
-      <TextField fx:id="hashValue" editable="false" layoutX="37.0" layoutY="270.0" prefHeight="25.0" prefWidth="665.0" />
-      <Text fx:id="filePathText" layoutX="570.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="filename" />
+      <TextField fx:id="pValue" layoutX="37.0" layoutY="35.0" prefWidth="300.0" />
+      <TextField fx:id="qValue" layoutX="37.0" layoutY="71.0" prefWidth="300.0" />
+      <TextField fx:id="hValue" layoutX="37.0" layoutY="103.0" prefWidth="300.0" />
+      <TextField layoutX="37.0" layoutY="136.0" prefWidth="300.0" fx:id="xValue" />
+      <TextField fx:id="kValue" layoutX="37.0" layoutY="168.0" prefWidth="300.0" />
+      <TextField fx:id="rValue" layoutX="400.0" layoutY="64.0" prefWidth="300.0" />
+      <TextField fx:id="sValue" layoutX="400.0" layoutY="100.0" prefWidth="300.0" />
+      <TextField fx:id="gValue" layoutX="400.0" layoutY="132.0" prefWidth="300.0" />
+      <TextField fx:id="yValue" layoutX="400.0" layoutY="165.0" prefWidth="300.0" />
+      <TextField fx:id="hashValue" editable="false" layoutX="37.0" layoutY="270.0" prefHeight="25.0" prefWidth="300.0" />
+
+      <TextField fx:id="wValue" editable="false" layoutX="400.0" layoutY="270.0" prefWidth="300.0" />
+      <TextField fx:id="u1Value" editable="false" layoutX="400.0" layoutY="310.0" prefWidth="300.0" />
+      <TextField fx:id="u2Value" editable="false" layoutX="400.0" layoutY="351.0" prefWidth="300.0" />
+      <TextField fx:id="vValue" editable="false" layoutX="400.0" layoutY="391.0" prefWidth="300.0" />
+
+      <Text layoutX="377.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="W" />
+      <Text layoutX="376.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="U1" />
+      <Text layoutX="377.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="U2" />
+      <Text layoutX="376.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="V" />
+      <Text fx:id="filePathText" layoutX="207.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="filename" />
       <Text layoutX="14.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P" />
       <Text layoutX="14.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Q" />
       <Text layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="h" />
       <Text layoutX="14.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="X" />
       <Text layoutX="15.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="K" />
-      <Text layoutX="377.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R" />
-      <Text layoutX="377.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S" />
-      <Text layoutX="377.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G" />
-      <Text layoutX="377.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y" />
+      <Text layoutX="377.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R" />
+      <Text layoutX="377.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="S" />
+      <Text layoutX="377.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G" />
+      <Text layoutX="377.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y" />
       <Text layoutX="37.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HASH" wrappingWidth="59.736724853515625" />
-      <Button layoutX="41.0" layoutY="214.0" mnemonicParsing="false"  onAction="#signFile" prefHeight="25.0" prefWidth="300.0" text="Sign" />
+      <Button layoutX="41.0" layoutY="214.0" mnemonicParsing="false" onAction="#signFile" prefHeight="25.0" prefWidth="300.0" text="Sign" />
       <Button layoutX="400.0" layoutY="214.0" mnemonicParsing="false" onAction="#checkSign" prefHeight="25.0" prefWidth="300.0" text="Check signature" />
-      <Button layoutX="570.0" layoutY="316.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="25.0" prefWidth="130.0" text="Open file" />
+      <Button layoutX="207.0" layoutY="316.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="25.0" prefWidth="130.0" text="Open file" />
+
 
    </children>
 </Pane>
