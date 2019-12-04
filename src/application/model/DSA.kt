@@ -4,32 +4,38 @@ import java.math.BigInteger
 
 class DSA(
         private val P: BigInteger,
-        private val Q: BigInteger
+        private val Q: BigInteger,
+        M: List<Byte>
 ) {
 
     lateinit var G: BigInteger
     lateinit var Y: BigInteger
     lateinit var R: BigInteger
     lateinit var S: BigInteger
-    lateinit var hash: BigInteger
+    var hash: BigInteger
 
     lateinit var X: BigInteger
     lateinit var K: BigInteger
     lateinit var h: BigInteger
 
+    lateinit var W: BigInteger
+    lateinit var U1: BigInteger
+    lateinit var U2: BigInteger
+    lateinit var V: BigInteger
+
 
     init{
         checkQ()
         checkP()
+        hash = calculateHash(M, 100.toBigInteger(), Q)
     }
 
-    fun sign(M: MutableList<Byte>, X: BigInteger, K: BigInteger, h: BigInteger){
+    fun sign(X: BigInteger, K: BigInteger, h: BigInteger){
         this.h = h
         this.X = X
         this.K = K
         checkX()
         checkK()
-        hash = calculateHash(M, 100.toBigInteger(), Q)
         calculateG()
         calculateY()
         calculateR()
@@ -37,9 +43,8 @@ class DSA(
         checkRS()
     }
 
-    fun checkSign(M: List<Byte>, R: BigInteger, S: BigInteger, G: BigInteger, Y: BigInteger): Boolean {
+    fun checkSign(R: BigInteger, S: BigInteger, G: BigInteger, Y: BigInteger): Boolean {
         val W = S.modPow(Q - TWO, Q)
-        hash = calculateHash(M, 100.toBigInteger(), Q)
         val u1 = (W * hash).mod(Q)
         val u2 = (R * W).mod(Q)
         val v = (G.modPow(u1, P) * Y.modPow(u2, P)).mod(P).mod(Q)

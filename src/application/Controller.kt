@@ -60,8 +60,9 @@ class Controller {
                 val h = hValue.text.toString().toBigInteger()
                 val X = xValue.text.toString().toBigInteger()
                 val K = kValue.text.toString().toBigInteger()
-                val dsa = DSA(P, Q)
-                dsa.sign(fileBytes, X, K, h)
+                val dsa = DSA(P, Q, fileBytes)
+                hashValue.text = dsa.hash.toString()
+                dsa.sign(X, K, h)
 
                 val signFile = File(File(filePath).parent + "\\sign.txt")
                 val writer = FileWriter(signFile)
@@ -93,13 +94,15 @@ class Controller {
                 val S = sValue.text.toString().toBigInteger()
                 val G = gValue.text.toString().toBigInteger()
                 val Y = yValue.text.toString().toBigInteger()
-                val dsa = DSA(P, Q)
-                val answer = dsa.checkSign(fileBytes, R, S, G, Y)
+                val dsa = DSA(P, Q, fileBytes)
+                val answer = dsa.checkSign(R, S, G, Y)
+                hashValue.text = dsa.hash.toString()
                 if (answer){
                     alert("Valid signature.")
                 }else{
                     alert("Invalid signature.")
                 }
+
 
             }catch (e: Exception){
                 alert(e.toString())
