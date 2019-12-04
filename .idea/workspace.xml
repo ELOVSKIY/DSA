@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/application/Controller.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/EDS/application/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EDS/application/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EDS/application/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EDS/application/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EDS/application/TestKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EDS/application/TestKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EDS/application/model/BigIntegerUtilsKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EDS/application/model/BigIntegerUtilsKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/EDS/application/model/DSA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EDS/application/model/DSA.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/EDS/application/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/EDS/application/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/application/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/Controller.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/application/model/DSA.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/model/DSA.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/application/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/application/sample.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -93,6 +93,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -104,6 +105,52 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RestClientSettings">
+    <option name="REQUEST_HISTORY">
+      <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://23.105.226.153/user/login" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;username&quot;: &quot;admin&quot;,&#10;  &quot;code&quot;: &quot;5555&quot;,&#10;  &quot;device_id&quot;: &quot;android&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://23.105.226.153/user/register" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;username&quot;: &quot;admin&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+      </list>
+    </option>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -158,6 +205,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="auth_and_register#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/../requests/requests/auth_and_register.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="auth_and_register#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/../requests/requests/auth_and_register.http" index="3">
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -205,9 +258,13 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Kotlin.application.TestKt" />
+      <item itemvalue="HTTP Request.auth_and_register#1" />
+      <item itemvalue="HTTP Request.auth_and_register#3" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.auth_and_register#3" />
+        <item itemvalue="HTTP Request.auth_and_register#1" />
         <item itemvalue="Kotlin.application.TestKt" />
       </list>
     </recent_temporary>
@@ -225,7 +282,8 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1575436453109" duration="4605000" />
       <workItem from="1575449867206" duration="3183000" />
-      <workItem from="1575472485047" duration="796000" />
+      <workItem from="1575472485047" duration="1337000" />
+      <workItem from="1575475782476" duration="6062000" />
     </task>
     <servers />
   </component>
@@ -248,5 +306,16 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/application/Controller.kt</url>
+          <line>65</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,56 +1,127 @@
-package application;
+package application
 
-import javafx.fxml.FXML;
-import javafx.scene.text.Text;
-import javafx.stage.FileChooser;
+import application.model.DSA
+import javafx.fxml.FXML
+import javafx.scene.control.Alert
+import javafx.scene.control.TextField
+import javafx.scene.text.Text
+import javafx.stage.FileChooser
 
-import java.awt.*;
-import java.io.File;
+import java.io.File
+import java.io.FileWriter
+import java.lang.Exception
+import java.nio.file.Files
+import java.nio.file.Paths
 
-public class Controller {
-
-    @FXML
-    TextField pValue;
-
-    @FXML
-    TextField qValue;
-
-    @FXML
-    TextField hValue;
+class Controller {
 
     @FXML
-    TextField xValue;
+    lateinit var pValue: TextField
 
     @FXML
-    TextField kValue;
+    lateinit var qValue: TextField
 
     @FXML
-    TextField rValue;
+    lateinit var hValue: TextField
 
     @FXML
-    TextField sValue;
+    lateinit var xValue: TextField
 
     @FXML
-    TextField gValue;
+    lateinit var kValue: TextField
 
     @FXML
-    TextField yValue;
+    lateinit var rValue: TextField
 
     @FXML
-    TextField hashValue;
+    lateinit var sValue: TextField
 
     @FXML
-    Text filePathText;
-
-    private String filePath;
+    lateinit var gValue: TextField
 
     @FXML
-    void choseFile() {
-        FileChooser fileChooser = new FileChooser();
-        File file = fileChooser.showOpenDialog(filePathText.getScene().getWindow());
-        if (file != null) {
-            filePath = file.getPath();
-            filePathText.setText(file.getName());
+    lateinit var yValue: TextField
+
+    @FXML
+    lateinit var hashValue: TextField
+
+    @FXML
+    lateinit var filePathText: Text
+
+    private var filePath: String? = null
+
+    @FXML
+    fun signFile() {
+        if (filePath != null) {
+            try {
+                val fileBytes = Files.readAllBytes(Paths.get(filePath)).toMutableList()
+                val P = pValue.text.toString().toBigInteger()
+                val Q = qValue.text.toString().toBigInteger()
+                val h = hValue.text.toString().toBigInteger()
+                val X = xValue.text.toString().toBigInteger()
+                val K = kValue.text.toString().toBigInteger()
+                val dsa = DSA(P, Q)
+                dsa.sign(fileBytes, X, K, h)
+
+                val signFile = File(File(filePath).parent + "\\sign.txt")
+                val writer = FileWriter(signFile)
+                writer.append("R = ")
+                writer.append(dsa.R.toString())
+                writer.append("\nS = ")
+                writer.append(dsa.S.toString())
+                writer.append("\nG = ")
+                writer.append(dsa.G.toString())
+                writer.append("\nY = ")
+                writer.append(dsa.Y.toString())
+                writer.close()
+            }catch (e: Exception){
+                alert(e.toString())
+            }
+        }else{
+            alert("Choose file.")
         }
+    }
+
+    @FXML
+    fun checkSign(){
+        if (filePath != null) {
+            try {
+                val fileBytes = Files.readAllBytes(Paths.get(filePath)).toMutableList()
+                val P = pValue.text.toString().toBigInteger()
+                val Q = qValue.text.toString().toBigInteger()
+                val R = rValue.text.toString().toBigInteger()
+                val S = sValue.text.toString().toBigInteger()
+                val G = gValue.text.toString().toBigInteger()
+                val Y = yValue.text.toString().toBigInteger()
+                val dsa = DSA(P, Q)
+                val answer = dsa.checkSign(fileBytes, R, S, G, Y)
+                if (answer){
+                    alert("Valid signature.")
+                }else{
+                    alert("Invalid signature.")
+                }
+
+            }catch (e: Exception){
+                alert(e.toString())
+            }
+        }else{
+            alert("Choose file.")
+        }
+    }
+
+    @FXML
+    fun chooseFile() {
+        val fileChooser = FileChooser()
+        val file = fileChooser.showOpenDialog(filePathText!!.scene.window)
+        if (file != null) {
+            filePath = file.path
+            filePathText!!.text = file.name
+        }
+    }
+
+    fun alert(msg: String){
+        val alert = Alert(Alert.AlertType.WARNING)
+        alert.headerText = msg;
+        alert.showAndWait();
     }
 }

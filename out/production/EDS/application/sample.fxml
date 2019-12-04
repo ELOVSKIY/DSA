@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="389" maxWidth="723" minHeight="389" minWidth="723" prefHeight="389.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="389" maxWidth="723" minHeight="389" minWidth="723" prefHeight="389.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
       <TextField fx:id="pValue" layoutX="37.0" layoutY="35.0" prefWidth="300.0" text="P" />
       <TextField fx:id="qValue" layoutX="37.0" layoutY="71.0" prefWidth="300.0" text="Q" />
       <TextField fx:id="hValue" layoutX="37.0" layoutY="103.0" prefWidth="300.0" text="h" />
-      <TextField fx:id="xValue" layoutX="37.0" layoutY="136.0" prefWidth="300.0" text="X" />
+      <TextField layoutX="37.0" layoutY="136.0" prefWidth="300.0" text="X" fx:id="xValue" />
       <TextField fx:id="kValue" layoutX="37.0" layoutY="168.0" prefWidth="300.0" text="K" />
       <TextField fx:id="rValue" layoutX="400.0" layoutY="35.0" prefWidth="300.0" text="R" />
       <TextField fx:id="sValue" layoutX="400.0" layoutY="71.0" prefWidth="300.0" text="S" />
@@ -28,9 +28,9 @@
       <Text layoutX="377.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G" />
       <Text layoutX="377.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Y" />
       <Text layoutX="37.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HASH" wrappingWidth="59.736724853515625" />
-      <Button layoutX="41.0" layoutY="214.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" text="Sign" />
-      <Button layoutX="400.0" layoutY="214.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" text="Check signature" />
-      <Button layoutX="570.0" layoutY="316.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Open file" />
+      <Button layoutX="41.0" layoutY="214.0" mnemonicParsing="false"  onAction="#signFile" prefHeight="25.0" prefWidth="300.0" text="Sign" />
+      <Button layoutX="400.0" layoutY="214.0" mnemonicParsing="false" onAction="#checkSign" prefHeight="25.0" prefWidth="300.0" text="Check signature" />
+      <Button layoutX="570.0" layoutY="316.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="25.0" prefWidth="130.0" text="Open file" />
 
    </children>
 </Pane>

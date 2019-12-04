@@ -7,15 +7,16 @@ class DSA(
         private val Q: BigInteger
 ) {
 
-    private lateinit var G: BigInteger
-    private lateinit var Y: BigInteger
-    private lateinit var R: BigInteger
-    private lateinit var S: BigInteger
-    private lateinit var hash: BigInteger
+    lateinit var G: BigInteger
+    lateinit var Y: BigInteger
+    lateinit var R: BigInteger
+    lateinit var S: BigInteger
+    lateinit var hash: BigInteger
 
-    private lateinit var X: BigInteger
-    private lateinit var K: BigInteger
-    private lateinit var h: BigInteger
+    lateinit var X: BigInteger
+    lateinit var K: BigInteger
+    lateinit var h: BigInteger
+
 
     init{
         checkQ()
